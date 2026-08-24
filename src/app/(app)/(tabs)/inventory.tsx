@@ -7,7 +7,7 @@ import { categoriesListHref } from '@/features/categories/utils/routes';
 export default function InventoryScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Inventory</Text>
+      <Text style={styles.title}>Kho hàng</Text>
       <Pressable
         accessibilityRole="button"
         onPress={() => router.push(categoriesListHref())}

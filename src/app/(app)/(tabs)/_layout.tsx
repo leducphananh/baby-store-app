@@ -23,7 +23,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Dashboard',
+          title: 'Tổng quan',
           tabBarIcon: ({ color, size, focused }) => (
             <TabIcon name={focused ? 'home' : 'home-outline'} color={color} size={size} />
           ),
@@ -32,7 +32,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="inventory"
         options={{
-          title: 'Inventory',
+          title: 'Kho hàng',
           tabBarIcon: ({ color, size, focused }) => (
             <TabIcon name={focused ? 'cube' : 'cube-outline'} color={color} size={size} />
           ),
@@ -41,7 +41,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="orders"
         options={{
-          title: 'Orders',
+          title: 'Đơn hàng',
           tabBarIcon: ({ color, size, focused }) => (
             <TabIcon name={focused ? 'receipt' : 'receipt-outline'} color={color} size={size} />
           ),
@@ -50,7 +50,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          title: 'Settings',
+          title: 'Cài đặt',
           tabBarIcon: ({ color, size, focused }) => (
             <TabIcon name={focused ? 'settings' : 'settings-outline'} color={color} size={size} />
           ),

@@ -12,9 +12,9 @@ export default function SettingsScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
-      <Text style={styles.email}>Signed in as: {session?.user?.email}</Text>
-      <Button title="Sign Out" onPress={handleSignOut} color="#ff3b30" />
+      <Text style={styles.title}>Cài đặt</Text>
+      <Text style={styles.email}>Đăng nhập với: {session?.user?.email}</Text>
+      <Button title="Đăng xuất" onPress={handleSignOut} color="#ff3b30" />
     </View>
   );
 }

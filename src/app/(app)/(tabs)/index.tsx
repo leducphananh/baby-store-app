@@ -7,8 +7,8 @@ export default function DashboardScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Dashboard</Text>
-      <Text>Welcome back, {session?.user?.email}</Text>
+      <Text style={styles.title}>Tổng quan</Text>
+      <Text>Chào mừng trở lại, {session?.user?.email}</Text>
     </View>
   );
 }
