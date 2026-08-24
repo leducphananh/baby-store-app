@@ -1,53 +1,55 @@
 import { router } from 'expo-router';
-import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
+import { ThemedText } from '@/components/themed-text';
+import { Screen } from '@/components/ui/screen';
+import { MenuItem } from '@/components/ui/menu-item';
+import { Spacing } from '@/constants/theme';
 import { categoriesListHref } from '@/features/categories/utils/routes';
 import { suppliersListHref } from '@/features/suppliers/utils/routes';
 
 export default function InventoryScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Kho hàng</Text>
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => router.push(categoriesListHref())}
-        style={styles.link}
-      >
-        <Text style={styles.linkText}>Danh mục sản phẩm</Text>
-      </Pressable>
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => router.push(suppliersListHref())}
-        style={styles.link}
-      >
-        <Text style={styles.linkText}>Nhà cung cấp</Text>
-      </Pressable>
-    </View>
+    <Screen padded>
+      <ThemedText type="title" style={styles.title}>
+        Kho hàng
+      </ThemedText>
+      <ThemedText type="default" themeColor="textSecondary" style={styles.subtitle}>
+        Quản lý danh mục, nhà cung cấp và tồn kho sản phẩm.
+      </ThemedText>
+
+      <View style={styles.list}>
+        <MenuItem
+          icon="pricetags-outline"
+          iconColor="#208AEF"
+          iconBackground="#E6F4FE"
+          title="Danh mục sản phẩm"
+          description="Quản lý các nhóm hàng: bỉm, sữa, bình sữa..."
+          onPress={() => router.push(categoriesListHref())}
+        />
+        <MenuItem
+          icon="people-outline"
+          iconColor="#15803D"
+          iconBackground="#DCFCE7"
+          title="Nhà cung cấp"
+          description="Danh sách NCC, thông tin liên hệ và trạng thái"
+          onPress={() => router.push(suppliersListHref())}
+        />
+      </View>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 16,
-  },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 28,
+    lineHeight: 34,
   },
-  link: {
-    minHeight: 48,
-    paddingHorizontal: 24,
-    justifyContent: 'center',
-    borderRadius: 8,
-    backgroundColor: '#208AEF',
+  subtitle: {
+    marginTop: Spacing.one,
+    marginBottom: Spacing.five,
   },
-  linkText: {
-    color: '#ffffff',
-    fontSize: 16,
-    fontWeight: '600',
+  list: {
+    gap: Spacing.two,
   },
 });
