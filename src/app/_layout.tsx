@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Slot, useRouter, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Providers } from '@/providers';
 import { AuthProvider } from '@/providers/AuthProvider';
 import { useAuthStore } from '@/features/auth/store/authStore';
@@ -43,10 +44,12 @@ function InitialLayout() {
 
 export default function RootLayout() {
   return (
-    <Providers>
-      <AuthProvider>
-        <InitialLayout />
-      </AuthProvider>
-    </Providers>
+    <SafeAreaProvider>
+      <Providers>
+        <AuthProvider>
+          <InitialLayout />
+        </AuthProvider>
+      </Providers>
+    </SafeAreaProvider>
   );
 }
