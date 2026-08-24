@@ -3,6 +3,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { categoriesListHref } from '@/features/categories/utils/routes';
+import { suppliersListHref } from '@/features/suppliers/utils/routes';
 
 export default function InventoryScreen() {
   return (
@@ -14,6 +15,13 @@ export default function InventoryScreen() {
         style={styles.link}
       >
         <Text style={styles.linkText}>Danh mục sản phẩm</Text>
+      </Pressable>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push(suppliersListHref())}
+        style={styles.link}
+      >
+        <Text style={styles.linkText}>Nhà cung cấp</Text>
       </Pressable>
     </View>
   );
