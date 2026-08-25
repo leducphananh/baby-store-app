@@ -7,6 +7,7 @@ import { MenuItem } from '@/components/ui/menu-item';
 import { Spacing } from '@/constants/theme';
 import { categoriesListHref } from '@/features/categories/utils/routes';
 import { suppliersListHref } from '@/features/suppliers/utils/routes';
+import { productsListHref } from '@/features/products/utils/routes';
 
 export default function InventoryScreen() {
   return (
@@ -19,6 +20,14 @@ export default function InventoryScreen() {
       </ThemedText>
 
       <View style={styles.list}>
+        <MenuItem
+          icon="cube-outline"
+          iconColor="#B45309"
+          iconBackground="#FEF3C7"
+          title="Sản phẩm"
+          description="Danh sách sản phẩm, giá bán, xuất xứ..."
+          onPress={() => router.push(productsListHref())}
+        />
         <MenuItem
           icon="pricetags-outline"
           iconColor="#208AEF"
